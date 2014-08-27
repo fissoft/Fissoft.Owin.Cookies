@@ -55,6 +55,7 @@
     <Compile Include="CookieAuthenticationMiddleware.cs" />
     <Compile Include="CookieAuthenticationOptions.cs" />
     <Compile Include="CookieSecureOption.cs" />
+    <Compile Include="FisCookieManager.cs" />
     <Compile Include="IAuthenticationSessionStore.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Provider\CookieApplyRedirectContext.cs" />

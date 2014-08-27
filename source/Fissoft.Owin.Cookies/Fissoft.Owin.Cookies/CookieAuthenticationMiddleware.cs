@@ -39,14 +39,6 @@ namespace Fissoft.Owin.Cookies
 
             _logger = app.CreateLogger<CookieAuthenticationMiddleware>();
 
-            if (Options.TicketDataFormat == null)
-            {
-                IDataProtector dataProtector = app.CreateDataProtector(
-                    typeof(CookieAuthenticationMiddleware).FullName,
-                    Options.AuthenticationType, "v1");
-
-                Options.TicketDataFormat = new TicketDataFormat(dataProtector);
-            }
             if (Options.CookieManager == null)
             {
                 Options.CookieManager = new ChunkingCookieManager();

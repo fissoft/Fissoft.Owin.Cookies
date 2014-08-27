@@ -56,33 +56,12 @@ namespace Fissoft.Owin.Cookies
                     return null;
                 }
 
-                if (Options.SessionStore != null)
-                {
-                    Claim claim = ticket.Identity.Claims.FirstOrDefault(c => c.Type.Equals(SessionIdClaim));
-                    if (claim == null)
-                    {
-                        _logger.WriteWarning(@"SessoinId missing");
-                        return null;
-                    }
-                    _sessionKey = claim.Value;
-                    ticket = await Options.SessionStore.RetrieveAsync(_sessionKey);
-                    if (ticket == null)
-                    {
-                        _logger.WriteWarning(@"Identity missing in session store");
-                        return null;
-                    }
-                }
-
                 DateTimeOffset currentUtc = Options.SystemClock.UtcNow;
                 DateTimeOffset? issuedUtc = ticket.Properties.IssuedUtc;
                 DateTimeOffset? expiresUtc = ticket.Properties.ExpiresUtc;
 
                 if (expiresUtc != null && expiresUtc.Value < currentUtc)
                 {
-                    if (Options.SessionStore != null)
-                    {
-                        await Options.SessionStore.RemoveAsync(_sessionKey);
-                    }
                     return null;
                 }
 
