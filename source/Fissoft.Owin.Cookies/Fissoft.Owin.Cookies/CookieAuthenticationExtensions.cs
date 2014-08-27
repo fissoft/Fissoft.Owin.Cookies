@@ -1,5 +1,3 @@
-
-
 using System;
 using Microsoft.Owin.Extensions;
 using Owin;
