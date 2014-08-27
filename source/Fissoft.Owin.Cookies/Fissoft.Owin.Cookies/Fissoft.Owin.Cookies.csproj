@@ -48,9 +48,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CookieAuthenticationDefaults.cs" />
+    <Compile Include="CookieAuthenticationExtensions.cs" />
+    <Compile Include="CookieAuthenticationHandler.cs" />
+    <Compile Include="CookieAuthenticationMiddleware.cs" />
+    <Compile Include="CookieAuthenticationOptions.cs" />
+    <Compile Include="CookieSecureOption.cs" />
+    <Compile Include="IAuthenticationSessionStore.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Provider\CookieApplyRedirectContext.cs" />
+    <Compile Include="Provider\CookieAuthenticationProvider.cs" />
+    <Compile Include="Provider\CookieExceptionContext.cs" />
+    <Compile Include="Provider\CookieResponseSignedInContext.cs" />
+    <Compile Include="Provider\CookieResponseSignInContext.cs" />
+    <Compile Include="Provider\CookieResponseSignOutContext.cs" />
+    <Compile Include="Provider\CookieValidateIdentityContext.cs" />
+    <Compile Include="Provider\DefaultBehavior.cs" />
+    <Compile Include="Provider\ICookieAuthenticationProvider.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Fissoft.Owin.Cookies.nuspec" />
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
